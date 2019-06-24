@@ -1,0 +1,250 @@
+// Write your styles here
+$font-weights: ("semi bold": 600, "bold": 700, "extra bold": 800);
+
+%button-basic {
+  width: 180px;
+  height: 60px;
+  border: none;
+  background: $btnBg;
+  color: #fff;
+  font-size: 24px;
+  font-weight: map-get($font-weights, 'semi bold');
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius: 3px;
+}
+
+%logo-img{
+  width: 45px;
+  height: 45px;
+}
+%logo-p{
+  margin: 0 14px;
+  padding-top: 3px;
+  font-family: $textFont;
+  font-size: 24px;
+  font-weight: map-get($font-weights, "semi bold");
+  line-height: 100%;
+  text-align: center;
+}
+%logo-span{
+  display: block;
+  font-size: 10px;
+  line-height: 2em;
+}
+
+@mixin pseudo($width, $height, $left, $background: $underlineColor, $pos: absolute, $content: '', $index: -1){
+  content: $content;
+  width: $width;
+  height: $height;
+  left: $left;
+  background: $background;
+  position: $pos;
+  z-index: $index;
+}
+
+html,
+body {
+  background-color: $bodyBg;
+  margin:  0;
+  padding: 0;
+}
+
+.header {
+  background-image: $headerBg;
+  background-size: cover;
+  border-radius: 0 0 38em/17em 0;
+  margin-top:-150px;
+  width: 100%;
+  height: 720px;
+  padding-top: 150px; 
+
+  &-wrap {
+    margin: 0 10% 0 10%;
+    position: absolute;
+
+    div.landing-logo{
+        height: 50px;
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 67px;
+        
+        img{@extend %logo-img; };
+        p{@extend %logo-p;
+            color: $textColor;
+          }
+        span{@extend %logo-span; };
+    }
+    
+    p.header_heading{
+        margin:0;
+        padding:0;
+        width: 610px;
+        font-family: 'Source Sans Pro', sans-serif;
+        color:$textColor;
+        font-size: 72px;
+        font-weight: map-get($font-weights, "bold");
+        line-height: 100%;  
+        position:relative;
+        z-index: 1;
+        
+        &::after{
+            @include pseudo(305px, 25px, 0);
+            bottom:0  
+        } 
+    }
+    p.header_text{
+      margin: 60px 0 12px 0;
+      font-family: $textFont;
+      letter-spacing: 0.2px;
+      color: $textColor;
+      line-height: 1.5em;
+      white-space: pre;
+      position:relative;
+      left: -40px;
+      top: -25px
+    }
+    button{
+      @extend %button-basic;
+    }
+  }
+}
+
+main.section{
+  margin: 0 10% 0 10%;
+
+  p.section_text{
+    width:450px;
+    padding: 0 30%;
+    font-size: 42px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $textColor;
+    font-weight: map-get($font-weights, "semi bold");
+    line-height: 1em;
+    position: relative;
+    z-index: 1;
+    
+    &::after{
+        @include pseudo(185px, 12px, 49.5%);
+        bottom:3px
+          
+    } 
+  }
+}
+
+div.section_card_wrap{
+    display: flex;
+    :not(:last-child){
+      margin-right: 2%;
+    }
+
+    div.section_card{
+      width: 30%;
+      padding: 20px;
+      background: $blocksFooterBg;
+      border-radius: 8px;
+      font-family: 'Hind', sans-serif;
+      text-align: center;
+      
+      img {
+        width:100%;
+        border-radius: 8px;
+      }
+
+      p.section_card_heading{
+        font-family: 'Hind', sans-serif;
+        margin: 12px 0;;
+        display: inline-block;
+        color: #fff;
+        font-size: 1.5em;
+        line-height: 1em;
+        box-shadow: inset 0px -12px 0px 0px $underlineColor;
+      }
+
+      p.section_card_text{
+        font-family: $textFont;
+        color: $blocksFooterColor;
+        margin-top: 0;
+      }
+    }
+}
+
+div.section_banner{
+  margin: 90px 10% 0 10%;
+  height: 180px;
+  background: $bannerGradient;
+  border-radius: 8px;
+  position:relative;
+  z-index: 3;
+  top: 90px;
+  
+  &_text_wrap{
+    margin: 0 0 50px 130px;
+    float: left;
+
+    p.section_banner_heading{
+      color: #2c2f3c;
+      font-family: 'Hind', sans-serif;
+      font-size: 30px;
+      font-weight: map-get($font-weights, "extra bold");
+      margin: 35px 0 20px 0;
+      position:relative;
+      z-index: 1;
+
+      &::before{
+        @include pseudo(65px, 12px, 123px);
+        top: 23px;
+        
+      }
+    }
+    p.section_banner_text{
+      color: #c0c3c6;
+      margin-bottom: 0;
+      font-family: $textFont;
+    }
+    
+  }
+  button{
+    @extend %button-basic;
+    float: right;
+    margin: 60px 130px 60px 0;
+  }
+}
+
+footer.footer {
+  width: 100%;
+  height: 300px;
+  background: $blocksFooterBg;
+  position: relative;
+  z-index: 2;
+  
+  div.footer-wrap{
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%; 
+
+    div.landing-logo{
+      height: 50px;
+      width: 30%;
+      margin-top: 170px;    
+      display: flex;
+
+      img{@extend %logo-img; };
+      p{@extend %logo-p;
+        color: $blocksFooterColor;
+      }
+      span{@extend %logo-span; };
+    }
+
+    .footer_text{
+      color:$blocksFooterColor;
+      width: 28%;
+      margin-top: 155px;
+      font-family: $textFont;
+    }
+    .footer-cr{
+      margin: 190px 0 0 25%;
+      color:$blocksFooterColor;
+      font-family: $textFont;
+    }
+  }
+}
