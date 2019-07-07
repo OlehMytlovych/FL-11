@@ -1,4 +1,4 @@
-let a1 = parseFloat(prompt('Enter a1', '').replace(',', '.')),//if a user enters a number with comma, we can still parse it 
+let a1 = parseFloat(prompt('Enter a1', '').replace(',', '.')), 
     a2 = parseFloat(prompt('Enter a2', '').replace(',', '.')),
     b1 = parseFloat(prompt('Enter b1', '').replace(',', '.')),
     b2 = parseFloat(prompt('Enter b2', '').replace(',', '.')),
