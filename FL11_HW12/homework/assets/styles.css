@@ -1,0 +1,41 @@
+#root {
+  display: flex;  
+  margin: 0 auto;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px
+}
+
+.headingWrapper {
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 35px;
+  height: 35px
+}
+
+p.item-text {
+  margin: 0 auto 0 auto;
+}
+
+img.remover {
+  margin-right: 0px
+}
+
+.customAlert {
+  position: fixed;
+  top: 10px;
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  color: whitesmoke;
+  padding: 10px;
+  visibility: visible;
+}
+
