@@ -1,0 +1,101 @@
+@import "variables.less";
+
+//as default fonts, headings and hr are different from the desired ones
+body {
+  font-family: @font;
+}
+h1,h4{
+  color: @blue
+}
+hr {
+  background-color: @blue;
+  margin: 0 0 20px 0;
+}
+
+//overridden bootstrap classes in nav
+nav.navbar {
+  padding: 0;
+
+  div.container {
+    justify-content: start;
+    align-items: center;
+
+    img {
+      margin-right: 1rem;
+    }
+
+    div.collapse ul.navbar-nav {
+      a.nav-link {
+        font-family: @font;
+        color: @grey;
+        padding: 1rem
+      } 
+      a.active {
+        color: white;
+        background-color: @blue;
+      }
+    }
+
+  }
+
+ 
+}
+
+//custom styles for the related classes section
+section h4{
+  font-weight: 700;
+}
+
+.gallery {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto; 
+  grid-template-columns: 23% 23% 23% 23%;
+  justify-content: space-between;
+
+  .gallery-item {
+    border-style: solid;
+    border-width: 1px;
+
+    img {
+      width: 100%
+    }
+    h6 {
+      text-align: center;
+      padding: 10px 0;
+      margin: 0;
+      color: white;
+    }
+  }
+
+  .gallery-item:nth-child(1){
+    background-color: @red;
+    border-color: @red;
+  }
+  .gallery-item:nth-child(2){
+    background-color: @blue;
+    border-color: @blue;
+  }
+  .gallery-item:nth-child(3){
+    background-color: @orange;
+    border-color: @orange;
+  }
+  .gallery-item:nth-child(4){
+    background-color: @green;
+    border-color: @green;
+  }
+} 
+
+@media (max-width: 767.98px) {
+  .gallery {
+    display: grid;
+    grid-template-rows: auto auto; 
+    grid-template-columns: 47% 47%;
+    gap: 6%
+  }
+}
+
+//as available bootstrap colors are different from #666
+footer.container div{
+  background-color: @grey;
+}
