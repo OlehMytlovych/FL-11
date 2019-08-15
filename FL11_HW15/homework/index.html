@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dream Hamburger</title>
+</head>
+<body>
+  <script>
+    class Hamburger {
+      constructor (type, cals, SecretIngredient) {
+        let calories = cals;
+        let withSecretIngredient = SecretIngredient;
+        let cheese = 0;
+        let tomato = 0;
+        let bitten = 0;
+
+        if (withSecretIngredient) {
+          calories += 100
+        }
+
+        this.type = type;
+
+        this.getCalories = () => calories;
+        this.setCalories = (newCals) => {
+          calories = newCals
+        }
+
+        this.addCheese = () => {
+          if (bitten) {
+            return 'Sorry, you cannot add cheese after your first bite'
+          }
+
+          if (cheese) {
+            return 'Sorry, you can add cheese only once.'
+          } else {
+            cheese++;
+            calories += 120;
+            return 'Cheese added.'
+          }
+        }
+        this.addTomato = () => {
+          if (bitten) {
+            return 'Sorry, you cannot add tomato after your first bite'
+          }
+
+          if (tomato === 2) {
+            return 'Sorry, you can add tomato only twice.'
+          } else {
+            tomato++;
+            calories += 20
+            return 'Tomato added.'
+          }
+        }
+        this.addSecretIngredient = () => {
+          if (bitten) {
+            return 'Sorry, you cannot add Secret Ingredient after your first bite'
+          }
+
+          if (withSecretIngredient) {
+            return 'Sorry, you can add secret ingredient only once.'
+          }
+          else if (cheese || tomato) {
+            return 'Sorry, you can add secret ingredient only before other ingredients.'
+          } else {
+            withSecretIngredient = true;
+            calories += 100;
+            return 'Secret Ingredient added.'
+          }
+        }
+        this.bite = () => {
+          bitten++;
+          return 'The Hamburger was bitten.'
+        }
+        this.info = () => {
+          let info = `${this.type} hamburger:`;
+
+          //add the following three ingredients only if they are present in our hamburger
+          if (withSecretIngredient) {
+            info += ` with secret ingredient,`
+          }
+          if (cheese) {
+            info += ` with cheese,`
+          }
+          if (tomato) {
+            info += ` with ${tomato} tomato,`
+          }
+
+          if (bitten === 1) {
+            info += ` bitten once.`;
+          } else if (bitten === 2) {
+            info += ` bitten twice.`;
+          } else {
+            info += ` bitten ${bitten} times.`;
+          }
+      
+          info += `Total calories: ${calories}.`
+          return info
+        }
+      }
+    }
+
+  let type = 'magical';
+  let calories = 0;
+  let withSecretIngredient;
+  let hamburgerOfDreams//because 0 calories
+
+  //validate the data before creating an instance of Hamburger, so we don't allocate memory for an invalid object
+  if (isNaN(parseInt(calories))) {
+    console.log('Please, enter calories with a number.')
+  } else if (withSecretIngredient !== undefined && typeof withSecretIngredient !== 'boolean') {
+    console.log('Third argument must be a boolean.')
+  } else {
+    hamburgerOfDreams = new Hamburger(type, calories, withSecretIngredient)
+  }
+  
+  console.log(hamburgerOfDreams.info())
+
+  console.log(hamburgerOfDreams.addSecretIngredient())
+  console.log(hamburgerOfDreams.info())
+
+  console.log(hamburgerOfDreams.addCheese())
+  console.log(hamburgerOfDreams.info())
+  console.log(hamburgerOfDreams.addCheese())
+  console.log(hamburgerOfDreams.info())
+
+  console.log(hamburgerOfDreams.addTomato())
+  console.log(hamburgerOfDreams.addTomato())
+  console.log(hamburgerOfDreams.info())
+  console.log(hamburgerOfDreams.addTomato())
+  console.log(hamburgerOfDreams.info())
+
+  console.log(hamburgerOfDreams.addSecretIngredient())
+  console.log(hamburgerOfDreams.info())
+
+  console.log(hamburgerOfDreams.bite())
+  console.log(hamburgerOfDreams.info())
+  console.log(hamburgerOfDreams.bite())
+  console.log(hamburgerOfDreams.info())
+  console.log(hamburgerOfDreams.bite())
+  console.log(hamburgerOfDreams.info())
+  console.log(hamburgerOfDreams.bite())
+  console.log(hamburgerOfDreams.info())
+  </script>
+</body>
+</html>
