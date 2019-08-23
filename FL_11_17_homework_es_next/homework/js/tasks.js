@@ -87,7 +87,7 @@ const getMyReposProm = (url) => {
     });
 }
 
-getMyReposProm(`https://api.github.com/users/OlehMytlovych/repos`);
+/* getMyReposProm(`https://api.github.com/users/OlehMytlovych/repos`); */
 
 
 //9. Rewrite previous task using async/await instead of promises.
@@ -103,4 +103,4 @@ const getMyReposAs = async (url) => {
   }
 }
 
-getMyReposAs(`https://api.github.com/users/OlehMytlovych/repos`);
+/* getMyReposAs(`https://api.github.com/users/OlehMytlovych/repos`); */
