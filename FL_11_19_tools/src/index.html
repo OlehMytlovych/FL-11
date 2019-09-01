@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Old School Game</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="startQuestion">
+      <img src="./img/wanna_play.jpg" alt="Wanna Play A Game?">
+      <button id="btnConfirmPlay">Challenge Accepted!</button>
+      <button id="btnRejectPlay">Not Today</button>
+    </div>
+
+    <div class="byeBye">
+      <h2>Ohh... OK. But We Could Have Some Fun...</h2>
+      <img src="./img/bye_bye.png" alt="Bye Bye">
+      <button id="btnGoBack">Let`s Play!</button>
+    </div>
+
+    <div class="game">
+      <div class="enemyField">
+        <img src="./img/avatar.jpg" alt="avatar">
+        <span>Jigsaw</span>
+        <div id="enemyItem">
+          <span class="questionMark">?</span>
+        </div>
+      </div>
+      <h2 id="tip"></h2>
+      <hr>
+      <div class="playerField">
+        <div id="playerItem">
+          <span class="questionMark">?</span>
+        </div>
+        <div class="items">
+          <img class="item" src="./img/rock.png" alt="rock" id="rock">
+          <img class="item" src="./img/paper.png" alt="paper" id="paper">
+          <img class="item" src="./img/scissors.png" alt="scissors" id="scissors">
+        </div>
+      </div>
+      <div class="controlButtons">
+        <button id="btnReset">Reset</button>
+        <button id="btnLeave">Leave</button>
+      </div>
+      <div class="results">
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
