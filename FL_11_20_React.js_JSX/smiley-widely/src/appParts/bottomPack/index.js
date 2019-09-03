@@ -1,0 +1,1 @@
+export { BottomPack } from './bottomPack.component'

@@ -1,0 +1,1 @@
+export { NewPack } from './newPack.component';

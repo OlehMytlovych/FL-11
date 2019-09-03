@@ -1,0 +1,1 @@
+export { MainPacks } from './mainPacks.component.js'
