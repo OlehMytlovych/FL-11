@@ -11,11 +11,14 @@ export class GeneralButton extends React.Component {
   }
   handleClick(e) {
     if (this.state.props.disabled === false && this.state.props.type === "getItem") {
+
+      this.props.addPackToCart(this.props.itemId, this.props.itemTitle, this.props.itemPrice)
+      
       this.setState(prevState => {
-      let newProps = Object.assign({}, prevState.props);
-      newProps.disabled = true;
-      newProps.color = "secondary";
-      return { props: newProps };
+        let newProps = Object.assign({}, prevState.props);
+        newProps.disabled = true;
+        newProps.color = "secondary";
+        return { props: newProps };
       })
     }
   }
@@ -37,6 +40,9 @@ GeneralButton.propTypes = {
   text: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   disabled: PropTypes.bool.isRequired,
-  itemId: PropTypes.number.isRequired,
-  type: PropTypes.string.isRequired
+  itemId: PropTypes.number,
+  itemPrice: PropTypes.number,
+  itemTitle: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  addPackToCart: PropTypes.func,
 }

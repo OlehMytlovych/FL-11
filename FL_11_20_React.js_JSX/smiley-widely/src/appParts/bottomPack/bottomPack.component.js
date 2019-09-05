@@ -32,6 +32,7 @@ export class BottomPack extends React.Component {
         stars = {stars}
         price = {price}
         emoji = {emojiPics}
+        addPackToCart = {this.props.addPackToCart}
       />
     )
   }

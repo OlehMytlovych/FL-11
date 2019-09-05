@@ -22,6 +22,10 @@ export class Pack extends React.Component {
         color="primary"
         disabled={false}
         type="getItem"
+        addPackToCart={this.props.addPackToCart}
+        itemPrice={this.props.price}
+        itemTitle={this.props.title}
+
       />
     </div>
     )
@@ -33,5 +37,6 @@ Pack.propTypes = {
   title: PropTypes.string,
   stars: PropTypes.number,
   price: PropTypes.number,
-  emoji: PropTypes.array
+  emoji: PropTypes.array,
+  addPackToCart: PropTypes.func
 }

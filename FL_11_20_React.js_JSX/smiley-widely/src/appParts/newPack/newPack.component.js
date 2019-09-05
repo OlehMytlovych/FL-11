@@ -19,9 +19,8 @@ export class NewPack extends React.Component {
   }
 
   getPack(packs) {
-    let random = Math.floor(Math.random() * Math.floor(packs.length));
-    let randomPack = packs[random];
-    let {id, title, stars, price, ...emojiObj} = randomPack;
+    let pack = packs[0];
+    let {id, title, stars, price, ...emojiObj} = pack;
     let emojiPics = emojiObj.emoji
     
     emojiPics = emojiPics.slice(0, 3);
@@ -38,11 +37,15 @@ export class NewPack extends React.Component {
       </div>
       <div className="text-right">
         <GeneralButton
-          text={ `Get (${price}$)` }
-          itemId={ id }
-          color="primary"
-          disabled={false}
-          type="getItem"
+          text = { `Get (${price}$)` }
+          itemId = { id }
+          color = "primary"
+          disabled = {false}
+          type = "getItem"
+          addPackToCart = {this.props.addPackToCart}
+          itemPrice = {price}
+          itemTitle = {title}
+          
         /> 
       </div>
       </>

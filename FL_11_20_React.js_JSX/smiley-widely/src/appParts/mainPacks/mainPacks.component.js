@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-//import PropTypes from 'prop-types';
 import { Pack } from '../index'
 import { API } from '../../constants/api.constants'
 
@@ -24,8 +23,8 @@ export class MainPacks extends React.Component {
     let emojiPics = emojiObj.emoji
     
     emojiPics = emojiPics.slice(0, 3);
-    emojiPics = emojiPics.map(emoji => emoji.char)
-
+    emojiPics = emojiPics.map(emoji => emoji.char);
+    
     return (
       <Col>
         <Pack 
@@ -34,6 +33,7 @@ export class MainPacks extends React.Component {
           stars = {stars}
           price = {price}
           emoji = {emojiPics}
+          addPackToCart = {this.props.addPackToCart}
         />
       </Col>
     )
