@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NewsLine } from '../../models/NewsLine';
-//import { NewsLinesService } from '../../services/news-lines.service';
 
 @Component({
   selector: 'app-news-lines',
