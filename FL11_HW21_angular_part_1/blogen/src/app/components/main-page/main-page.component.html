@@ -1,0 +1,11 @@
+<div>
+  <app-header
+    [sources]=sources
+    [setSourceArticles]="setSourceArticles"
+    [changeFilterValue]="changeFilterValue"
+    ></app-header>
+  <app-news-lines
+  [articles]=sourceArticles
+  [searchStr]=filterValue
+  ></app-news-lines>
+</div>

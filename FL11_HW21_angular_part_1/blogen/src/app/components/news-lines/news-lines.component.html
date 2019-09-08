@@ -1,0 +1,14 @@
+<div>
+  <div class="article-item"
+  *ngFor="let article of articles | search:searchStr"
+  [routerLink]="['/article', article.articleId]"
+  >
+    <img src={{article.picture}} alt="">
+    <div class="text-wrapper">
+      <h2>{{article.shortDescription | uppercase}}</h2>
+      <p>{{article.text | slice:0:400}} ...</p>
+      <a>Read More...</a>
+      <span>Date: {{article.date}}</span>
+    </div>
+  </div>
+</div>

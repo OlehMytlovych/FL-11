@@ -1,0 +1,10 @@
+<h2>{{ article.author }}</h2>
+<div class="article-wrapper">
+  <img src={{article.picture}} alt="">
+  <div class="text-wrapper">
+    <h3>{{ article.shortDescription | uppercase}}</h3>
+    <p>{{ article.text }}</p>
+    <p>Date: {{ article.date }}</p>
+    <p>Author: {{ article.author }}</p>
+  </div>
+</div>

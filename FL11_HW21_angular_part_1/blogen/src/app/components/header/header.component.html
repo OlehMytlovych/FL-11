@@ -1,0 +1,24 @@
+<div id="header">
+  <h1>{{heading}}</h1>
+  <div class="nav-wrapper">
+    <div class="dropdown">
+      <button class="btn">Select Source</button>
+      <div class="dropdown-content">
+        <ul>
+          <li *ngFor="let source of sources"
+           id={{source.sourceId}}
+           (click)="showCurrent($event, source)"
+           > {{ source.source }} </li>
+          <li (click)="showCurrent()">Show All</li>
+           
+        </ul>
+      </div>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="What Are You Looking For?" [(ngModel)]="searchStr">
+      <button id="filterSubmit" class="btn" (click)="changeFilterValue(searchStr)">Filter</button>
+      <span>(click Filter with empty input to reset the filter)</span>
+    </div>
+    <button class="btn" [routerLink]="'/create-page'">Add Article</button>
+  </div>
+</div>

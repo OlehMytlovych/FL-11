@@ -1,0 +1,37 @@
+h2 {
+  text-align: center;
+  font-size: 2em;
+  background-color: whitesmoke;
+  padding: 30px;
+}
+
+.article-wrapper {
+  display: flex;
+  background-color: rgb(179, 255, 204);
+  padding: 45px;
+
+  img {
+    width: 600px;
+    height: auto;
+  }
+
+  .text-wrapper {
+    padding: 20px;
+
+    h3 {
+      margin-top: 0;
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.25em;
+      line-height: 1.5em;
+      
+      &:nth-of-type(1){
+        text-indent: 35px;
+        font-size: 1.5em;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
