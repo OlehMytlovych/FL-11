@@ -1,0 +1,29 @@
+<h2>Create News</h2>
+
+<form (submit)="onSubmit($event)">
+  
+  <legend>
+    <label for="heading">Heading</label>
+    <input [(ngModel)]="heading" name="heading">
+
+    <label for="shortDescription">Short description</label>
+    <input [(ngModel)]="shortDescription" name="shortDescription">
+
+    <label for="content">Content</label>
+    <textarea [(ngModel)]="content" name="content" id="" cols="30" rows="10"></textarea>
+  </legend>
+
+  <legend>
+    <label for="date">Date</label>
+    <input [(ngModel)]="date" name="date" type="date">
+
+    <label for="author">Author</label>
+    <input [(ngModel)]="author" name="author" type="text">
+
+    <label for="sourceURL">Source URL</label>
+    <input [(ngModel)]="sourceURL" name="sourceURL" type="text">
+
+    <input type="submit" value="Save">
+    <input type="button" value="Cancel" [routerLink]="'/main-page'">
+  </legend>
+</form>
