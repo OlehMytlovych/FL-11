@@ -1,0 +1,124 @@
+//these rules are for the main game section
+img.item {
+  background-color: rgba(196, 39, 39, 0.3);
+}
+
+.game {
+  display: none;
+
+  .enemyField {
+    margin: 20px 0;
+    position: relative;
+
+    img {
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+
+    span {
+      font-size: 2em;
+      color: whitesmoke;
+      margin: 50px
+    }
+
+    ul {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      margin: 0;
+      padding: 10px;
+      list-style: circle;
+      font-size: 1.5em;
+      color: rgb(177, 177, 177);
+      //border-right: 2px dashed rgb(177, 177, 177);
+      border-bottom: 2px dashed rgb(177, 177, 177);
+
+      li {
+        text-align: left;
+      }
+    }
+
+    #enemyItem {
+      height: 100px;
+      margin: 30px;
+      text-align: center;
+
+      .questionMark {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        color: whitesmoke;
+        font-size: 100px;
+        margin: 0;
+      }
+
+      img {
+        border-radius: 0;
+        vertical-align: baseline;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  h2 {
+    font-size: 2em;
+    color: whitesmoke;
+
+  }
+
+  hr {
+    height: 2px;
+  }
+
+  .playerField {
+    margin-bottom: 50px;
+
+    #playerItem {
+      height: 100px;
+      margin: 30px;
+
+      .questionMark {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        color: whitesmoke;
+        ;
+        font-size: 100px;
+        margin: 0;
+      }
+    }
+
+    .items img {
+      background-color: whitesmoke;
+      margin: 0 25px;
+      cursor: pointer;
+    }
+  }
+
+  .results {
+    font-size: 1.5em;
+    color: whitesmoke;
+  }
+}
+
+.controlButtons {
+  #btnReset {
+    background-color: rgb(0, 112, 2);
+
+    &:hover {
+      background-color: #191919;
+      color: rgb(0, 112, 2);
+      border:  rgb(0, 112, 2) 2px solid;
+    }
+  }
+
+  #btnLeave {
+    background-color: rgb(130, 0, 71);
+
+    &:hover {
+      background-color: #191919;
+      color: rgb(130, 0, 71);
+      border:  rgb(130, 0, 71) 2px solid;
+    }
+  }
+}
