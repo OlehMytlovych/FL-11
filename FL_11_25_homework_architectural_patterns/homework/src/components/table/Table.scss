@@ -1,0 +1,45 @@
+table {
+  max-width: 80vw;
+  margin: 120px auto 170px;
+  border-spacing: 0;
+  font-size: 1.25rem;
+
+  thead {
+      color: $white;
+      background-color: $turqoise;    
+  }
+
+  th, td {
+    padding: 25px;
+    text-align: center;
+  }
+
+  tbody {
+    tr:nth-child(odd) {
+      background-color: $gray;
+    }
+
+    button {
+      font-size: 1.25rem;
+      padding: 10px;
+      border: none;
+      color: $white;
+      background-color: $red;
+      box-shadow: $shadow;
+      cursor: pointer;
+
+      &:focus {
+        outline:0;
+      }
+      &:active {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+#root > p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: $red;
+}

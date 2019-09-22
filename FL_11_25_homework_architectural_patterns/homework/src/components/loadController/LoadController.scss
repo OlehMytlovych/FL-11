@@ -1,0 +1,28 @@
+.footer {
+  width: 100%;
+  box-shadow: $shadow;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+  background-color: $white;
+
+  button {
+    width: 40%;
+    font-size: 1.5rem;
+    border-radius: 25px;
+    border: none;
+    background-color: $gray;
+    padding: 20px;
+    box-shadow: $shadow;
+    cursor: pointer;
+
+    &:focus {
+      outline:0;
+    }
+    &:active {
+      box-shadow: none;
+    }
+  }
+}

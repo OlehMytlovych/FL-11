@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+  box-shadow: $shadow;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  padding: 25px;
+  background-color: $white;
+
+  label {
+    font-size: 1.5rem;
+    margin-right: 30px;
+  }
+
+  input {
+    height: 20px;
+    width: 200px;
+    padding: 15px;
+    font-size: 1.25rem;
+    border: none;
+    border-bottom: 1px solid #000;
+
+    &:focus {
+      outline-width: 0;
+      background-color: $gray;
+      border-bottom-width: 2px;
+      height: 19px;
+    }
+  }
+}
